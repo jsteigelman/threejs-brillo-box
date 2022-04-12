@@ -1,5 +1,9 @@
+:root {
+    --background-color: #070708;
+}
+
 body {
-    background-color: #0c0c11;
+    background-color: var(--background-color);
     width: 100%;
     min-height: calc(3000px + 100vh);
 }
@@ -19,7 +23,7 @@ body {
     box-sizing: border-box;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     font-size: 38px;
-    flex: 1 1 0px;
+    flex: 2 1 0px;
     line-height: 1.25;
     min-width: 0;
     z-index: 2;
@@ -27,13 +31,15 @@ body {
 }
 
 .column1 p {
-    color: #FCF7FC;
+    /* color: #FCF7FC; */
+    color: #ededed;
     overflow: hidden;
     overflow-wrap: break-word;
+    text-shadow: 2px 2px 4px var(--background-color);
 }
 
 .text .column2 {
-    flex: 1 1 0px;
+    flex: 3 1 0px;
     min-width: 0;
 }
 
