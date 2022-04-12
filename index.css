@@ -1,6 +1,7 @@
 body {
     background-color: #0c0c11;
     width: 100%;
+    min-height: calc(3000px + 100vh);
 }
 
 /* text */

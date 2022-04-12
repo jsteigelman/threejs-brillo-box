@@ -51,9 +51,14 @@ function animate() {
   requestAnimationFrame(animate)
 
   // animate the scene
-  cube.rotation.x += 0.01
-  cube.rotation.y += 0.01
+  // cube.rotation.x += 0.01
+  // cube.rotation.y += 0.01
 
+  const currentTimeline = window.pageYOffset / 3000 // how far down the page is scrolled as a percentage
+  const rotationX = currentTimeline * -0.5 + 0.6
+  const rotationY = (currentTimeline * 0.9 + 0.1) * Math.PI * 2 // rotate a full circle on y axis
+
+  cube.rotation.set(rotationX, rotationY, 0)
   renderer.render(scene, camera)
 }
 animate()
