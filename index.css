@@ -1,65 +1,95 @@
 :root {
     --background-color: #070708;
+    /* --background-color: #000; */
+    --font-color: #ededed;
 }
 
 body {
     background-color: var(--background-color);
     width: 100%;
     min-height: calc(3000px + 100vh);
+    display: flex;
+
+}
+
+/* container */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 /* text */
 
 .text {
-    display: flex;
-    width: 100%;
-    z-index: 1;
-    padding: 0 40px;
-    z-index: 2;
-
-}
-
-.text .column1 {
     box-sizing: border-box;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
-    font-size: 38px;
-    flex: 2 1 0px;
-    line-height: 1.25;
-    min-width: 0;
-    z-index: 2;
-
+    font-size: 32px;
+    line-height: 1.1;
+    padding: 0 20px;
+    width: 100%;
+    z-index: 1;
 }
 
-.column1 p {
-    /* color: #FCF7FC; */
-    color: #ededed;
-    overflow: hidden;
+.text h1 {
+    color: var(--font-color);
+    font-size: 59px;
+    margin: 16px 0;
+}
+
+.text p {
+    color: var(--font-color);
+    margin-top: 0;
     overflow-wrap: break-word;
-    text-shadow: 2px 2px 4px var(--background-color);
-}
-
-.text .column2 {
-    flex: 3 1 0px;
-    min-width: 0;
-}
-
-.text .column3 {
-    flex: 1 1 0px;
-    min-width: 0;
 }
 
 /* cube */
 
 .cube {
+    background-color: var(--background-color);
+    padding-bottom: 40px;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 0;
+    /* flex: 1 1 0px; */
 }
+
+/* prompt */
+
+/* .prompt {
+    box-sizing: border-box;
+    color: var(--font-color);
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: 59px;
+    margin: 16px 0;
+    padding: 20px;
+    position: fixed;
+    z-index: 5;
+} */
 
 /* footnote */
 
 #footnote-1 {
     font-size: 20px;
+}
+
+/* desktop */
+
+@media screen and (min-width: 600px) {
+    .container {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .text {
+        font-size: 38px;
+        line-height: 1.25;
+
+        min-width: 300px;
+        width: 50%;
+    }
 }

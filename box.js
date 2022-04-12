@@ -38,13 +38,13 @@ const spotlight = new THREE.DirectionalLight(0xffffff)
 spotlight.position.set(0, 0, 6)
 scene.add(spotlight)
 
-const boxSize = 3.75
+const boxSize = 2
 const geometry = new THREE.BoxGeometry(boxSize, boxSize, boxSize)
 
 const cube = new THREE.Mesh(geometry, materials)
 scene.add(cube)
 
-camera.position.z = 6
+camera.position.z = 4.5
 
 // smooth graphics
 let currentTimeline = window.pageYOffset / 3000 // how far down the page is scrolled as a percentage
