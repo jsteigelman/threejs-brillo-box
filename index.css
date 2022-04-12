@@ -1,3 +1,38 @@
 body {
-    background-color: black;
+    background-color: #0c0c11;
+}
+
+/* text */
+
+.text {
+    display: flex;
+    width: 100%;
+    z-index: 1;
+    padding: 0 40px;
+
+}
+
+.text .columnLeft {
+    color: #FCF7FC;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    flex: 1;
+    line-height: 1.25;
+    z-index: 1;
+
+}
+
+.text .columnRight {
+    flex: 1;
+}
+
+/* cube */
+
+.cube {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
 }
