@@ -7,6 +7,21 @@ const camera = new THREE.PerspectiveCamera(
   1000
 )
 
+// add images to cube
+const urls = [
+  './images/pink.png', './images/pink.png', // x
+  './images/pink.png', './images/pink.png', // y 
+  './images/pink.png', './images/pink.png' // z
+]
+
+const loader = new THREE.TextureLoader()
+
+const materials = urls.map(url => {
+  return new THREE.MeshLambertMaterial({
+    map: loader.load(url)
+  })
+})
+
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 
@@ -24,8 +39,8 @@ spotlight.position.set(0, 0, 6)
 scene.add(spotlight)
 
 const geometry = new THREE.BoxGeometry(3, 3, 3)
-const material = new THREE.MeshLambertMaterial({ color: 0x2727e6 })
-const cube = new THREE.Mesh(geometry, material)
+
+const cube = new THREE.Mesh(geometry, materials)
 scene.add(cube)
 
 camera.position.z = 6
