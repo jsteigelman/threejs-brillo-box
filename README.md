@@ -10,7 +10,6 @@ This is a simple exercise in Three.js! I created a 3D box that rotates as the us
 * Scrolling up and down the page rotates the box right and left accordingly
 
 ## Built With
-* Vanilla JS
 * [three.js](https://threejs.org/) - three.js is a cross-browser JavaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser using WebGL
 
 ## Preview
