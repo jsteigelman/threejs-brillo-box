@@ -9,9 +9,9 @@ const camera = new THREE.PerspectiveCamera(
 
 // add images to cube
 const urls = [
-  './images/pink.png', './images/pink.png', // x
-  './images/pink.png', './images/pink.png', // y 
-  './images/pink.png', './images/pink.png' // z
+  './images/brillo_side.png', './images/brillo_side.png', // x
+  './images/brillo_side.png', './images/brillo_bottom.png', // y 
+  './images/brillo_side.png', './images/brillo_side.png' // z
 ]
 
 const loader = new THREE.TextureLoader()
@@ -38,7 +38,8 @@ const spotlight = new THREE.DirectionalLight(0xffffff)
 spotlight.position.set(0, 0, 6)
 scene.add(spotlight)
 
-const geometry = new THREE.BoxGeometry(3, 3, 3)
+const boxSize = 3.75
+const geometry = new THREE.BoxGeometry(boxSize, boxSize, boxSize)
 
 const cube = new THREE.Mesh(geometry, materials)
 scene.add(cube)
