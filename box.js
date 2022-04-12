@@ -46,6 +46,10 @@ scene.add(cube)
 
 camera.position.z = 6
 
+// smooth graphics
+let currentTimeline = window.pageYOffset / 3000 // how far down the page is scrolled as a percentage
+let aimTimeline = window.pageYOffset / 3000
+
 // render the scene
 function animate() {
   requestAnimationFrame(animate)
@@ -54,11 +58,17 @@ function animate() {
   // cube.rotation.x += 0.01
   // cube.rotation.y += 0.01
 
-  const currentTimeline = window.pageYOffset / 3000 // how far down the page is scrolled as a percentage
+  currentTimeline += (aimTimeline - currentTimeline) * 0.2
+
+  // const currentTimeline = Window.pageYOffset / 3000
   const rotationX = currentTimeline * -0.5 + 0.6
-  const rotationY = (currentTimeline * 0.9 + 0.1) * Math.PI * 2 // rotate a full circle on y axis
+  const rotationY = (currentTimeline * 0.9 + 0.1) * Math.PI * 2 // 2 PI rotations is one complete circle
 
   cube.rotation.set(rotationX, rotationY, 0)
   renderer.render(scene, camera)
 }
 animate()
+
+window.addEventListener('scroll', function() {
+  aimTimeline = window.pageYOffset / 3000
+})
