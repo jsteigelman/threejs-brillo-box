@@ -9,12 +9,12 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 const cubeSection = document.querySelector('.cube')
 cubeSection.appendChild( renderer.domElement );
 
-const geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
+const geometry = new THREE.BoxGeometry(3, 3, 3);
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
-camera.position.z = 5;
+camera.position.z = 6;
 
 // render the scene
 function animate() {
